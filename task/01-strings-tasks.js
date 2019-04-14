@@ -22,7 +22,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-    throw new Error('Not implemented');
+   return value1+value2;
 }
 
 
@@ -38,7 +38,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-    throw new Error('Not implemented');
+    return value.length;
 }
 
 /**
@@ -55,7 +55,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-    throw new Error('Not implemented');
+    return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -84,7 +84,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-    throw new Error('Not implemented');
+    return value[0];
 }
 
 /**
@@ -99,8 +99,24 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-    throw new Error('Not implemented');
-}
+    let testVar = value;
+    let count1 = 0;
+    let count2 = 0;
+    for(i=0;i<testVar.length;i++){
+        if(testVar[i]==' '){
+            count1+=1;
+        }else{break};
+    };
+    testVar.splice(0,count1);
+    let testVar2 = testVar.reverse();
+      for(i=0;i<testVar2.length;i++){
+        if(testVar2[i]==' '){
+            count2+=1;
+        }else{break};
+      };
+    testVar2.splice(0,count2);
+    return testVar2.reverse();
+};
 
 /**
  * Returns a string that repeated the specified number of times.
@@ -114,7 +130,11 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    throw new Error('Not implemented');
+    let a ='';
+    for(i=0;i<count;i++){
+        a+=value;
+    };
+    return a;
 }
 
 /**
@@ -130,7 +150,8 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    throw new Error('Not implemented');
+    let newStr = str.replace(value,'');
+    return newStr;
 }
 
 /**
@@ -160,7 +181,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    throw new Error('Not implemented');
+    return str.toUpperCase();
 }
 
 /**
@@ -174,7 +195,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    throw new Error('Not implemented');
+    return str.split(';');
 }
 
 /**
